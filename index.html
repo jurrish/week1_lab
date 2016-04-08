@@ -39,6 +39,16 @@
       var userName = prompt(question);
       alert('Hello ' + userName + '! Welcome to my Page!');
       console.log(userName);
+
+      var guessFavMovie = prompt('Is my favorite movie Shawshank Redemtion? Y/N');
+      if(guessFavMovie === 'Y') {
+        alert('That is correct!');
+        console.log(userName + ' answered Y');
+      }else{
+        alert('Incorrect! Shawshank Redemption is my favorite movie')
+        console.log(userName + ' answered N');
+      }
+
     </script>
   </body>
   <footer>
