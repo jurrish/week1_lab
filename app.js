@@ -1,8 +1,8 @@
-var question = 'what\'s your name?';
-var counter = 0;
-var userName = prompt(question);
-alert('Hello ' + userName + '! Welcome to my Page!');
-console.log(userName);
+// var question = 'what\'s your name?';
+// var counter = 0;
+// var userName = prompt(question);
+// alert('Hello ' + userName + '! Welcome to my Page!');
+// console.log(userName);
 
 // var guessFavMovie = prompt('Is my favorite movie Shawshank Redemption? Y/N');
 // guessFavMovie = guessFavMovie.toUpperCase();
@@ -14,7 +14,7 @@ console.log(userName);
 //   alert('Incorrect. My favorite movie IS Shawshank Redemption');
 //   console.log(userName + ' answered ' + guessFavMovie);
 // }
-//
+
 // var guessFavFood = prompt('Is my favorite food pizza? Y/N');
 // guessFavFood = guessFavFood.toUpperCase();
 // if(guessFavFood === 'N' || guessFavFood === 'NO') {
@@ -41,17 +41,28 @@ console.log(userName);
 //   console.log(userName + ' answered ' + guessFavColor);
 // }
 
-var guessMyNumber = parseInt(prompt('What do you think my favorite number is? Guess 1-10'));
-if(guessMyNumber < 7) {
-  alert('Sorry ' + userName + ' your guess is too low');
-  console.log(userName + ' answered ' + guessMyNumber);
-} else if(guessMyNumber > 7) {
-  alert('Sorry ' + userName + ' your guess is too high');
-  console.log(userName + ' answered ' + guessMyNumber);
-} else {
-  alert('Good guess!');
-  console.log(userName + ' answered ' + guessMyNumber);
-  counter++;
-}
+// var guessMyAge = parseInt(prompt('How old do you think I am?'));
+// if(guessMyAge < 31) {
+//   alert('Sorry ' + userName + ' your guess is too low');
+//   console.log(userName + ' answered ' + guessMyAge);
+// } else if(guessMyAge > 31) {
+//   alert('Sorry ' + userName + ' your guess is too high');
+//   console.log(userName + ' answered ' + guessMyAge);
+// } else {
+//   alert('Good guess!');
+//   console.log(userName + ' answered ' + guessMyAge);
+//   counter++;
+// }
 //
 // var correctGuesses = alert('Congrats, ' + userName + ' you got ' + counter + ' out of 4 questions correct!');
+
+var guessMyNumber = parseInt(prompt('What do you think my favorite number is? 1-10'));
+var answer = 7;
+while (guessMyNumber !== answer) {
+  if (guessMyNumber < answer) {
+    guessMyNumber = parseInt(prompt('too low. try again'));
+  } else if (guessMyNumber > answer) {
+    guessMyNumber = parseInt(prompt('too high. try again'));
+  }
+}
+alert('Good Guess!');
