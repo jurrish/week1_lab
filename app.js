@@ -1,15 +1,21 @@
 var pUserName = document.getElementById('user-Name');
-var pElOne = document.getElementById('ans-one');
+var pAnsOne = document.getElementById('ans-one');
+// var pElOne = document.getElementById('ans-one');
 var pElTwo = document.getElementById('ans-two');
 var pElThree = document.getElementById('ans-three');
-var question = 'what\'s your name?';
+// var question = 'what\'s your name?';
 var counter = 0;
 
-var arrayQuestions = [];
+var arrayQuestions = [
+  'what\'s your name?',
+  'Is my favorite movie Shawshank Redemption? Y/N',
+  'Is my favorite food pizza? Y/N',
+  'Is my favorite color blue? Y/N'
+];
 var arrayAnswers = [];
 
-function userName () {
-  var userInput = prompt(question);
+function userName() {
+  var userInput = prompt(arrayQuestions[0]);
   pUserName.textContent = userInput;//set the content of a node by using node.textContent = "text"/variable (w3schools)
   arrayAnswers.push(userInput);//the userInput is now stored in an array called arrayAnswers at index 0. This reads arrayAnswers is using the push method on userInput and indexing it.
   console.log('arrayAnswers : ' + arrayAnswers[0]);
@@ -22,6 +28,19 @@ userName();
 // alert('Hello ' + userName + '! Welcome to my Page!');
 // console.log(userName);
 //
+function questionTwo() {
+  var quesOne = prompt(arrayQuestions[1]);
+  if(quesOne === 'Y' || quesOne === 'YES') {
+    pAnsOne.textContent = quesOne;
+    arrayAnswers.push(quesOne);
+    counter++;
+  } else {
+    pAnsOne.textContent = 'Sorry, you guessed: ' + quesOne + ' and that is wrong';
+    arrayAnswers.push(quesOne);
+  }
+  console.log(arrayAnswers[1]);
+}
+questionTwo();
 // var guessFavMovie = prompt('Is my favorite movie Shawshank Redemption? Y/N').toUpperCase();
 // if(guessFavMovie === 'Y' || guessFavMovie === 'YES') {
 //   alert('That is correct!');
@@ -32,6 +51,9 @@ userName();
 //   console.log(userName + ' answered ' + guessFavMovie);
 // }
 //
+function questionThree() {
+  var quesTwo = prompt(arrayQuestions[2]);
+}
 // var guessFavFood = prompt('Is my favorite food pizza? Y/N').toUpperCase();
 // if(guessFavFood === 'N' || guessFavFood === 'NO') {
 //   alert('That\'s correct. My favorite food is sushi, not pizza.');
