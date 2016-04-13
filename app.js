@@ -1,21 +1,21 @@
 var pUserName = document.getElementById('user-Name');
 var pAnsOne = document.getElementById('ans-one');
 // var pElOne = document.getElementById('ans-one');
-var pElTwo = document.getElementById('ans-two');
-var pElThree = document.getElementById('ans-three');
+var pAnsTwo = document.getElementById('ans-two');
+var pAnsThree = document.getElementById('ans-three');
 // var question = 'what\'s your name?';
 var counter = 0;
 
 var arrayQuestions = [
   'what\'s your name?',
-  'Is my favorite movie Shawshank Redemption? Y/N',
-  'Is my favorite food pizza? Y/N',
-  'Is my favorite color blue? Y/N'
+  'Is my favorite movie Shawshank Redemption? (Y/N)',
+  'Is my favorite food pizza? (Y/N)',
+  'Is my favorite color blue? (Y/N)'
 ];
 var arrayAnswers = [];
 
 function userName() {
-  var userInput = prompt(arrayQuestions[0]);
+  var userInput = prompt(arrayQuestions[0]).toUpperCase();
   pUserName.textContent = userInput;//set the content of a node by using node.textContent = "text"/variable (w3schools)
   arrayAnswers.push(userInput);//the userInput is now stored in an array called arrayAnswers at index 0. This reads arrayAnswers is using the push method on userInput and indexing it.
   console.log('arrayAnswers : ' + arrayAnswers[0]);
@@ -29,9 +29,9 @@ userName();
 // console.log(userName);
 //
 function questionTwo() {
-  var quesOne = prompt(arrayQuestions[1]);
+  var quesOne = prompt(arrayQuestions[1]).toUpperCase();
   if(quesOne === 'Y' || quesOne === 'YES') {
-    pAnsOne.textContent = quesOne;
+    pAnsOne.textContent = 'You answered: ' + quesOne + '. That is correct! My favorite movie IS Shawshank Redemption';
     arrayAnswers.push(quesOne);
     counter++;
   } else {
@@ -52,8 +52,18 @@ questionTwo();
 // }
 //
 function questionThree() {
-  var quesTwo = prompt(arrayQuestions[2]);
+  var quesTwo = prompt(arrayQuestions[2]).toUpperCase();
+  if(quesTwo === 'N' || quesTwo === 'NO'){
+    pAnsTwo.textContent = 'You answered: ' + quesTwo + '. That is correct! My favorite food is not Pizza. I actually like Sushi the most.';
+    arrayAnswers.push(quesTwo);
+    counter++;
+  } else {
+    pAnsTwo.textContent = 'You answered: ' + quesTwo + '. That is incorrect. Pizza is good, but not my favorite.';
+    arrayAnswers.push(quesTwo);
+  }
+  console.log(arrayAnswers[2]);
 }
+questionThree();
 // var guessFavFood = prompt('Is my favorite food pizza? Y/N').toUpperCase();
 // if(guessFavFood === 'N' || guessFavFood === 'NO') {
 //   alert('That\'s correct. My favorite food is sushi, not pizza.');
