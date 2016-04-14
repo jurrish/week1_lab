@@ -76,6 +76,19 @@ questionThree();
 //   console.log(userName + ' answered ' + guessFavFood);
 // }
 //
+function questionFour() {
+  var quesThree = prompt(arrayQuestions[3]).toUpperCase();
+  if(quesThree === 'Y' || quesThree === 'YES') {
+    pAnsThree.textContent = 'You typed: ' + quesThree + '. That is correct. My favorite color is blue';
+    arrayAnswers.push(quesThree);
+    counter++;
+  } else {
+    pAnsThree.textContent = 'You typed: ' + quesThree + ', and that is incorrect. My favorite color IS blue';
+    arrayAnswers.push(quesThree);
+  }
+  console.log(arrayAnswers[3]);
+}
+questionFour();
 // var guessFavColor = prompt('Is my favorite color blue? Y/N').toUpperCase();
 // if(guessFavColor === 'Y' || guessFavColor === 'YES') {
 //   alert('That\'s correct!');
