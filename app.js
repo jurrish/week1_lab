@@ -3,6 +3,8 @@ var pAnsOne = document.getElementById('ans-one');
 // var pElOne = document.getElementById('ans-one');
 var pAnsTwo = document.getElementById('ans-two');
 var pAnsThree = document.getElementById('ans-three');
+var pAnsFour = document.getElementById('ans-four');
+var pAnsFive = document.getElementById('ans-five');
 // var question = 'what\'s your name?';
 var counter = 0;
 
@@ -10,7 +12,9 @@ var arrayQuestions = [
   'what\'s your name?',
   'Is my favorite movie Shawshank Redemption? (Y/N)',
   'Is my favorite food pizza? (Y/N)',
-  'Is my favorite color blue? (Y/N)'
+  'Is my favorite color blue? (Y/N)',
+  'Guess my age!',
+  'Guess my favorite number!'
 ];
 var arrayAnswers = [];
 
@@ -101,6 +105,32 @@ questionFour();
 //   console.log(userName + ' answered ' + guessFavColor);
 // }
 //
+function questionFive() {
+  var quesFour = prompt(arrayQuestions[4]);
+  while (quesFour !== 31) {
+    pAnsFour.textContent = 'You guessed: ' + quesFour + ' Try again!';
+    prompt(arrayQuestions[4]);
+  } if (quesFour < 31) {
+    pAnsFour.textContent = 'Guess higher!';
+    prompt(arrayQuestions[4]);
+  } else if (quesFour > 31) {
+    pAnsFour.textContent = 'Guess Lower!';
+    prompt(arrayQuestions[4]);
+  } else if (quesFour === 31) {
+    quesFour === 31;
+    pAnsFour.textContent = 'Good Guess!';
+    counter++;
+    arrayAnswers.push(quesFour);
+  }
+}
+questionFive();
+//   } else if (quesFour > 31) {
+//     pAnsFour.textContent = 'Guess lower!';
+//   } else {
+//     pAnsFour.textContent = 'Good guess! I am 31';
+//     counter++;
+//   }
+// }
 // var guessMyAge = parseInt(prompt('How old do you think I am?'));
 // if(guessMyAge < 31) {
 //   alert('Sorry ' + userName + ' your guess is too low');
