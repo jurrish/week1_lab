@@ -16,23 +16,32 @@ var arrayQuestions = [
   'Guess my favorite number!'
 ];
 var arrayAnswers = [
-  'Y',
+  'Y',//['Y', 'YES'] referenced as userInput === answer[0]
   'N',
   'Y',
   31,
   7,
 ];
 
-var userName = prompt('What\'s your name?').toUpperCase();
+var userName = prompt('What\'s your name?');
+pUserName.textContent = userName;
 
 function game(question, answer, element) {
   var userInput = prompt(question).toUpperCase();
-  if(userInput === answer){
+  var checkBoolean = isNaN(userInput);//turns to boolean T/F value
+  if(checkBoolean === true && userInput === answer) {//check to see if the value is a string or boolean
     element.textContent = 'Great Guess!';
-    counter++;
+    // counter++;
+  } else if(userInput !== answer && checkBoolean !== true){
+    var newCheck = parseInt(checkAnswer);
+  } else if(newCheck === true && userInput === answer){
+    element.textContent = 'Great Guess!';
   } else {
-    element.textContent = 'Nope, that is incorrect';
+    element.textContent = 'Nope. Try again';
+    // element.textContent = 'Nope, that is incorrect';
+    //turn the value into an integer and run this code:
   }
+  //
 }
 
 for(i = 0; i < arrayQuestions.length; i++) {
