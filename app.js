@@ -28,21 +28,43 @@ pUserName.textContent = userName;
 
 function game(question, answer, element) {
   var userInput = prompt(question).toUpperCase();
-  var checkBoolean = isNaN(userInput);//turns to boolean T/F value
-  if(checkBoolean === true && userInput === answer) {//check to see if the value is a string or boolean
+  // var checkBoolean = isNaN(userInput);//turns to boolean T/F value
+  if(userInput = answer) { //check to see if the value is a string or boolean
     element.textContent = 'Great Guess!';
+  } else if(isNan(parseInt(userInput)) === false){
+    var newCounter = 0;
+    while (newCounter <= 3) {
+      if(userInput = 31){
+        element.textConent = 'Good Guess!';
+        break;
+      } else {
+        element.textContent = 'try again!';
+        userInput = parseInt(userInput);
+        newCounter++;
+      }
+    } else {
+      element.textContent = 'Nope!';
+    }
+//   } else if(userInput = answer){//new userInput is now a number value
+//     element.textContent = 'great guess!';
+//   } else {
+//     element.textContent = 'nope';
+//   }
+// }
     // counter++;
-  } else if(userInput !== answer && checkBoolean !== true){
-    var newCheck = parseInt(checkAnswer);
-  } else if(newCheck === true && userInput === answer){
-    element.textContent = 'Great Guess!';
-  } else {
-    element.textContent = 'Nope. Try again';
-    // element.textContent = 'Nope, that is incorrect';
-    //turn the value into an integer and run this code:
-  }
-  //
-}
+//   } else if(userInput !== answer) {
+//     element.textContent = 'nope. try again!';
+//   } else if(userInput !== answer && isNan(parseInt(userInput)) === false){
+//     var newCheck = parseInt(userInput);
+//   } else if(newCheck === true && userInput === answer){
+//     element.textContent = 'Great Guess!';
+//   } else {
+//     element.textContent = 'Nope. Try again';
+//     // element.textContent = 'Nope, that is incorrect';
+//     //turn the value into an integer and run this code:
+//   }
+//   //
+// }
 
 for(i = 0; i < arrayQuestions.length; i++) {
   game(arrayQuestions[i], arrayAnswers[i], els[i]);
