@@ -1,12 +1,60 @@
 h1 {
   font-family: cursive;
   color: blue;
+  text-align: center;
+}
+
+#intro {
+padding-left: 50px;
+padding-right: 50px;
+}
+
+#bio {
+  border-radius: 0px;
+}
+
+li {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+ol {
+  text-align: center;
+  list-style-type: none;
+}
+
+ul {
+  text-align: center;
 }
 
 html {
-  background-color: green;
+  background-color: #A3FFDE;
 }
 
 footer p {
   background-color: yellow;
+}
+
+#guessing-game {
+  background-color: #909BE8;
+  text-align: center;
+}
+
+section {
+  border-radius: 50px;
+  background-color: #909BE8;
+}
+
+footer {
+  text-align: center;
+  background-color: red;
+  text-decoration: underline;
+}
+
+.correct {
+  color: green;
+}
+
+.wrong {
+  color: red;
 }
