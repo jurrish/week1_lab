@@ -11,11 +11,10 @@ var imageTwo = document.getElementById('image-two');
 var imageThree = document.getElementById('image-three');
 var imageFour = document.getElementById('image-four');
 var imageFive = document.getElementById('image-five');
-// var ele = document.getElementById('correct');
-// var eleTwo = document.getElementById('wrong');
 var counter = 0;
 
 var els = [pAnsOne, pAnsTwo, pAnsThree, pAnsFour, pAnsFive];
+
 var imgArray = [imageOne, imageTwo, imageThree, imageFour, imageFive];
 
 var arrayQuestions = [
@@ -77,16 +76,6 @@ function game(question, answer, element, image) {
   }
   document.getElementById('correctGuesses').textContent = userName + ' you got : ' + counter + ' answers out of ' + arrayAnswers.length + ' correct!';
 }
-
-// function colorChange() {
-//   if(userInput === answer) {
-//     ele.addClass = 'correct';
-//   } else {
-//     ele.addClass = 'wrong';
-//   }
-// }
-//
-// colorChange();
 
 for(var i = 0; i < arrayQuestions.length; i++) {
   game(arrayQuestions[i], arrayAnswers[i], els[i], imgArray[i]);
